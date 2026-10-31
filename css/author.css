@@ -81,13 +81,13 @@ main:focus { outline: none; }
   text-align: left;
 }
 
-/* Each top-level item gets its category colour as a top border */
+/* Each top level item gets its category colour as a top border */
 .nav-item {
   background: #141414;
   border-top: 3px solid var(--item-clr);
 }
 
-/* Tier 1: display font */
+
 .nav-link {
   font-family: var(--font-display);
   font-size: 1.3125rem;
@@ -95,7 +95,7 @@ main:focus { outline: none; }
   color: #fff;
 }
 
-/* Tier 2 and 3: body font */
+
 .dropdown a,
 .submenu-toggle {
   font-size: 1rem;
@@ -119,6 +119,35 @@ main:focus { outline: none; }
 
 /* Open submenu chevron takes the category colour */
 .submenu-toggle[aria-expanded="true"] > .chevron { color: var(--item-clr); }
+
+/* White rings on dark surfaces */
+.logo:focus-visible,
+.footer-links a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+.icon-btn:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Drawn inside the row so overflow never clips it */
+.nav-link:focus-visible,
+.dropdown a:focus-visible,
+.submenu-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+.btn-primary:active {
+  background: #c4113d;
+  transform: scale(0.98);
+}
    /** just so you can see the items this will need to changed **/
    header,
    header svg  {
