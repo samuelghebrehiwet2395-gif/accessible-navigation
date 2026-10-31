@@ -14,6 +14,30 @@
    
 
    ===================================================================================== */
+   
+
+header { position: relative; }
+
+/* Skip link: off-screen until focused */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  color: var(--charcoal);
+  font-weight: 600;
+  transform: translateY(-100%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--red);
+  outline-offset: -3px;
+}
+
+/* No ring on main after the skip link moves focus to it */
+main:focus { outline: none; }
 
    /** just so you can see the items - this will need to changed **/
    header,
