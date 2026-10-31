@@ -36,8 +36,21 @@ header { position: relative; }
   outline-offset: -3px;
 }
 
-/* No ring on main after the skip link moves focus to it */
+/* No outline on main after the skip link moves focus to it */
 main:focus { outline: none; }
+
+/* Menus are closed by default */
+.nav-list { display: flex; flex-direction: column; }
+.dropdown,
+.nested-dropdown { display: none; }
+
+/* aria-expanded on the button opens the list right after it */
+[aria-expanded="true"] + .dropdown,
+[aria-expanded="true"] + .nested-dropdown { display: block; }
+
+/* Chevron flips when open */
+.chevron { transition: transform var(--ease-fast); }
+[aria-expanded="true"] > .chevron { transform: rotate(180deg); }
 
    /** just so you can see the items - this will need to changed **/
    header,
