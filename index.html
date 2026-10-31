@@ -19,6 +19,13 @@
 
 <body>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="chevron" viewBox="0 0 24 24">
+      <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  </svg>
+
   <header>
     <div class="inner-container">
 
@@ -36,97 +43,105 @@
       </a>
 
       <!-- Main navigation starts here -->
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
 
+          <!-- Paints -->
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-expanded="false" aria-controls="paints-menu">
+              Paints
+              <svg class="chevron" width="16" height="16" aria-hidden="true" focusable="false"><use href="#chevron" /></svg>
+            </button>
+            <ul class="dropdown" id="paints-menu">
+              <li><a href="#oil-paints">Oil Paints</a></li>
+              <li class="has-submenu">
+                <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="acrylic-menu">
+                  Acrylic Paints
+                  <svg class="chevron" width="16" height="16" aria-hidden="true" focusable="false"><use href="#chevron" /></svg>
+                </button>
+                <ul class="nested-dropdown" id="acrylic-menu">
+                  <li><a href="#heavy-body-acrylics">Heavy Body Acrylics</a></li>
+                  <li><a href="#soft-body-acrylics">Soft Body Acrylics</a></li>
+                  <li><a href="#fluid-acrylics">Fluid Acrylics</a></li>
+                  <li><a href="#acrylic-gouache">Acrylic Gouache</a></li>
+                  <li><a href="#open-slow-dry-acrylics">Open Slow-Dry Acrylics</a></li>
+                </ul>
+              </li>
+              <li><a href="#watercolours">Watercolours</a></li>
+              <li><a href="#gouache">Gouache</a></li>
+              <li><a href="#drawing-inks">Inks &amp; Drawing Inks</a></li>
+              <li><a href="#spray-paints">Spray Paints</a></li>
+              <li><a href="#mediums-additives">Mediums &amp; Additives</a></li>
+              <li><a href="#gesso-grounds">Gesso &amp; Grounds</a></li>
+            </ul>
+          </li>
 
-      <!-- Paints -->
-      Paints
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
+          <!-- Drawing -->
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-expanded="false" aria-controls="drawing-menu">
+              Drawing
+              <svg class="chevron" width="16" height="16" aria-hidden="true" focusable="false"><use href="#chevron" /></svg>
+            </button>
+            <ul class="dropdown" id="drawing-menu">
+              <li><a href="#pencils">Pencils</a></li>
+              <li><a href="#charcoal">Charcoal</a></li>
+              <li><a href="#pastels">Pastels</a></li>
+              <li class="has-submenu">
+                <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="pens-menu">
+                  Pens &amp; Markers
+                  <svg class="chevron" width="16" height="16" aria-hidden="true" focusable="false"><use href="#chevron" /></svg>
+                </button>
+                <ul class="nested-dropdown" id="pens-menu">
+                  <li><a href="#fine-liners">Fine Liners</a></li>
+                  <li><a href="#brush-pens">Brush Pens</a></li>
+                  <li><a href="#alcohol-markers">Alcohol Markers</a></li>
+                  <li><a href="#calligraphy-pens">Calligraphy Pens</a></li>
+                  <li><a href="#gel-pens">Gel Pens</a></li>
+                </ul>
+              </li>
+              <li><a href="#sketchbooks">Sketchbooks</a></li>
+              <li><a href="#erasers-sharpeners">Erasers &amp; Sharpeners</a></li>
+            </ul>
+          </li>
 
-      Oil Paints
-      Acrylic Paints
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
+          <!-- Surfaces -->
+          <li class="nav-item">
+            <a class="nav-link" href="#surfaces">Surfaces</a>
+          </li>
 
+          <!-- Tools -->
+          <li class="nav-item has-dropdown">
+            <button class="nav-link dropdown-toggle" type="button" aria-expanded="false" aria-controls="tools-menu">
+              Tools
+              <svg class="chevron" width="16" height="16" aria-hidden="true" focusable="false"><use href="#chevron" /></svg>
+            </button>
+            <ul class="dropdown" id="tools-menu">
+              <li class="has-submenu">
+                <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="brushes-menu">
+                  Brushes
+                  <svg class="chevron" width="16" height="16" aria-hidden="true" focusable="false"><use href="#chevron" /></svg>
+                </button>
+                <ul class="nested-dropdown" id="brushes-menu">
+                  <li><a href="#oil-acrylic-brushes">Oil &amp; Acrylic Brushes</a></li>
+                  <li><a href="#watercolour-brushes">Watercolour Brushes</a></li>
+                  <li><a href="#fan-brushes">Fan Brushes</a></li>
+                  <li><a href="#detail-brushes">Detail Brushes</a></li>
+                  <li><a href="#brush-sets">Brush Sets</a></li>
+                </ul>
+              </li>
+              <li><a href="#palette-knives">Palette Knives</a></li>
+              <li><a href="#easels">Easels</a></li>
+              <li><a href="#palettes">Palettes</a></li>
+              <li><a href="#drawing-boards-rulers">Drawing Boards &amp; Rulers</a></li>
+              <li><a href="#varnishes-finishes">Varnishes &amp; Finishes</a></li>
+            </ul>
+          </li>
 
-      Heavy Body Acrylics
-      Soft Body Acrylics
-      Fluid Acrylics
-      Acrylic Gouache
-      Open Slow-Dry Acrylics
+          <li class="nav-item"><a class="nav-link" href="#studio">Studio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sale">Sale</a></li>
 
-      Watercolours
-      Gouache
-      Inks &amp; Drawing Inks
-      Spray Paints
-      Mediums &amp; Additives
-      Gesso &amp; Grounds
-
-      <!-- Drawing -->
-
-      Drawing
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
-
-
-      Pencils
-      Charcoal
-      Pastels
-
-      Pens &amp; Markers
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
-
-        Fine Liners
-        Brush Pens
-        Alcohol Markers
-        Calligraphy Pens
-        Gel Pens
-
-      Sketchbooks
-      Erasers &amp; Sharpeners
-
-      <!-- Surfaces -->
-      Surfaces
-
-
-      <!-- Tools -->
-      Tools
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
-
-
-      Brushes
-      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9" />
-      </svg>
-
-        Oil &amp; Acrylic Brushes
-        Watercolour Brushes
-        Fan Brushes
-        Detail Brushes
-        Brush Sets
-
-      Palette Knives
-      Easels
-      Palettes
-      Drawing Boards &amp; Rulers
-      Varnishes &amp; Finishes
-
-      Studio
-      
-      Sale
+        </ul>
+      </nav>
 
       <!-- Nav actions: cart, search, hamburger -->
       <div class="nav-actions">
@@ -151,11 +166,12 @@
         </button>
 
         <!-- Hamburger: mobile only -->
-        <div class="nav-toggle">
+        <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="site-nav">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div>
+        </button>
 
       </div>
 
