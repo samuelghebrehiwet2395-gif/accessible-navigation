@@ -44,7 +44,7 @@ main:focus { outline: none; }
 .dropdown,
 .nested-dropdown { display: none; }
 
-/* aria-expanded on the button opens the list right after it */
+/* aria expanded on the button opens the list right after it */
 [aria-expanded="true"] + .dropdown,
 [aria-expanded="true"] + .nested-dropdown { display: block; }
 
@@ -81,7 +81,45 @@ main:focus { outline: none; }
   text-align: left;
 }
 
-   /** just so you can see the items - this will need to changed **/
+/* Each top-level item gets its category colour as a top border */
+.nav-item {
+  background: #141414;
+  border-top: 3px solid var(--item-clr);
+}
+
+/* Tier 1: display font */
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 1.3125rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* Tier 2 and 3: body font */
+.dropdown a,
+.submenu-toggle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dropdown { background: var(--charcoal); }
+
+/* Nested items: coloured left rule and indent */
+.nested-dropdown a {
+  width: calc(100% - 1.5rem);
+  margin-left: 1.5rem;
+  border-left: 3px solid var(--item-clr);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Subtle hover on the dark panel */
+.dropdown a:hover,
+.submenu-toggle:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* Open submenu chevron takes the category colour */
+.submenu-toggle[aria-expanded="true"] > .chevron { color: var(--item-clr); }
+   /** just so you can see the items this will need to changed **/
    header,
    header svg  {
       color: #efefef; 
