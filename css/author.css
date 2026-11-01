@@ -18,7 +18,7 @@
 
 header { position: relative; }
 
-/* Skip link: off-screen until focused */
+
 .skip-link {
   position: absolute;
   top: 0;
@@ -36,19 +36,19 @@ header { position: relative; }
   outline-offset: -3px;
 }
 
-/* No outline on main after the skip link moves focus to it */
+
 main:focus { outline: none; }
 
-/* Menus are closed by default */
+
 .nav-list { display: flex; flex-direction: column; }
 .dropdown,
 .nested-dropdown { display: none; }
 
-/* aria expanded on the button opens the list right after it */
+
 [aria-expanded="true"] + .dropdown,
 [aria-expanded="true"] + .nested-dropdown { display: block; }
 
-/* Chevron flips when open */
+
 .chevron { transition: transform var(--ease-fast); }
 [aria-expanded="true"] > .chevron { transform: rotate(180deg); }
 
@@ -81,10 +81,9 @@ main:focus { outline: none; }
   text-align: left;
 }
 
-/* Each top level item gets its category colour as a top border */
+
 .nav-item {
   background: #141414;
-  border-top: 3px solid var(--item-clr);
 }
 
 
@@ -109,18 +108,18 @@ main:focus { outline: none; }
 .nested-dropdown a {
   width: calc(100% - 1.5rem);
   margin-left: 1.5rem;
-  border-left: 3px solid var(--item-clr);
-  color: rgba(255, 255, 255, 0.7);
+    border-left: 1px solid var(--item-clr);
 }
 
-/* Subtle hover on the dark panel */
+
+.nav-link:hover,
 .dropdown a:hover,
 .submenu-toggle:hover { background: rgba(255, 255, 255, 0.08); }
 
 
 .submenu-toggle[aria-expanded="true"] > .chevron { color: var(--item-clr); }
 
-/* White outline on dark surfaces */
+
 .logo:focus-visible,
 .footer-links a:focus-visible {
   outline: 2px solid #fff;
@@ -132,7 +131,6 @@ main:focus { outline: none; }
   outline-offset: 1px;
 }
 
-/* Drawn inside the row so overflow never clips it */
 .nav-link:focus-visible,
 .dropdown a:focus-visible,
 .submenu-toggle:focus-visible {
@@ -149,6 +147,7 @@ main:focus { outline: none; }
   transform: scale(0.98);
 }
 
+
 @media (min-width: 1024px) {
 
   
@@ -159,7 +158,7 @@ main:focus { outline: none; }
   .nav-actions { justify-self: end; }
 
 
-  /* Nav is always visible and sits in the header row */
+  
   .site-nav {
     display: block;
     position: static;
@@ -175,7 +174,7 @@ main:focus { outline: none; }
     border-top: 0;
   }
 
-  /* Top level items: coloured underline on hover or open */
+  
   .nav-link {
     width: auto;
     gap: 0.5rem;
@@ -187,11 +186,69 @@ main:focus { outline: none; }
   .nav-link:hover,
   .nav-link[aria-expanded="true"] {
     color: var(--item-clr);
-    border-bottom-color: var(--item-clr);
+   background: none;
+   
+  }
+
+
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 16rem;
+    padding: 0.25rem 0;
+    background: #fff;
+    border-top: 3px solid var(--item-clr);
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    z-index: 40;
+  }
+
+  .dropdown li { position: relative; }
+
+  
+  .dropdown a,
+  .submenu-toggle {
+    color: var(--charcoal);
+  }
+
+
+  .dropdown a:hover,
+  .submenu-toggle:hover,
+  .submenu-toggle[aria-expanded="true"] {
+    background: color-mix(in srgb, var(--item-clr) 10%, #fff);
+    color: var(--item-clr);
+  }
+
+  
+  .nested-dropdown {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 16rem;
+    padding: 0.25rem 0;
+    background: #fff;
+    border-left: 3px solid var(--item-clr);
+    border-radius: 0 6px 6px 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+  .nested-dropdown a {
+    width: 100%;
+    margin-left: 0;
+    border-left: 0;
+    color: var(--charcoal);
+  }
+
+  
+  .submenu-toggle .chevron,
+  .submenu-toggle[aria-expanded="true"] > .chevron {
+    transform: rotate(-90deg);
+    fill: currentColor;
+    color: currentColor;
   }
 }
 
-/* Respect users who turn off animation */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .chevron,

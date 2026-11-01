@@ -1,4 +1,4 @@
-// Hamburger: show or hide the mobile panel
+
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.getElementById('site-nav');
 
@@ -8,7 +8,6 @@ toggle.addEventListener('click', () => {
   nav.classList.toggle('is-open');
 });
 
-// Dropdown and submenu buttons: open or close their list
 const buttons = document.querySelectorAll('.dropdown-toggle, .submenu-toggle');
 
 buttons.forEach(button => {
