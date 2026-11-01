@@ -193,6 +193,13 @@ main:focus { outline: none; }
   }
 }
 
+/* Respect users who turn off animation */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .chevron,
+  .btn-primary { transition: none; }
+}
+
    /** just so you can see the items this will need to changed **/
    header,
    header svg  {
